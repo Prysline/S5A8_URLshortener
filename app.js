@@ -10,6 +10,6 @@ app.get('/', (req, res) => {
 })
 
 // Sever: listen
-app.listen(port, ()=> {
+app.listen(port, () => {
   console.log(`Express is running on http://localhost:${port}`)
 })
