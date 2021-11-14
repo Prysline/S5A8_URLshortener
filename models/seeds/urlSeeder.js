@@ -2,12 +2,12 @@ const mongoose = require('mongoose')
 const db = require('../../config/mongoose')
 const Url = require('../url')
 const originalUrls = [
-  { originalUrls: 'https://www.google.com/' },
-  { originalUrls: 'https://tw.alphacamp.co/' },
-  { originalUrls: 'https://www.wikipedia.org/' },
-  { originalUrls: 'https://tw.yahoo.com/' },
-  { originalUrls: 'https://www.plurk.com/' },
-  { originalUrls: 'https://www.youtube.com/' }
+  { originalUrl: 'https://www.google.com/' },
+  { originalUrl: 'https://tw.alphacamp.co/' },
+  { originalUrl: 'https://www.wikipedia.org/' },
+  { originalUrl: 'https://tw.yahoo.com/' },
+  { originalUrl: 'https://www.plurk.com/' },
+  { originalUrl: 'https://www.youtube.com/' }
 ]
 
 db.once('open', () => {
