@@ -13,11 +13,17 @@ router.post('/', (req, res) => {
   Url.find()
     .lean()
     .then(urls => {
+      // 【輸入相同網址時，產生一樣的縮址】
+      // 此處檢查是否已存在相同網址
+      // 已存在： return [true, 既有縮址]
+      // 不存在： return [false], '']
       const UrlRepeat = US.checkUrlRepeat(urls, originalUrl)
       if (UrlRepeat[0]) {
         shortingUrl = UrlRepeat[1]
       } else {
         console.log('no existing');
+        // 亂數產生網址時，有可能會對兩個不同的網址，產生了重覆的亂數組合
+        // 在此函式中會取得不重複的組合
         shortingUrl = US.getNoRepeatShortingUrl(urls, 5)
         Url.create({ originalUrl, shortingUrl })
       }
